@@ -7,7 +7,7 @@ MODULEVERSION=$(echo $MAGICVERSION | cut -d " " -f 2)
 KERNELVERSION=$(uname -r)
 if [ "$MODULEVERSION" == "$KERNELVERSION" ]
 then
-  echo "Kernel and Module Versions Match"
+  echo "Kernel and Module Versions Match; Installing ..."
 else 
   echo "The Kernel version does not match the Module Version"
   echo "Kernel Version: " $KERNELVERSION
@@ -25,7 +25,10 @@ else
   echo "$ sudo modprobe -f cdc-acm"
 fi
 # Install the cdc-acm module
-sudo cp -v cdc-acm.ko /lib/modules/$(uname -r)/kernel/drivers/usb/class
+INSTALLDIRECTORY=/lib/modules/$(uname -r)/kernel/drivers/usb/class
+echo $INSTALLDIRECTORY
+sudo mkdir -p "$INSTALLDIRECTORY" 
+sudo cp -v cdc-acm.ko $INSTALLDIRECTORY
 sudo depmod -a
 echo "Installed cdc-acm Module"
 

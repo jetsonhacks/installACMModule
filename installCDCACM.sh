@@ -25,9 +25,10 @@ else
   echo "$ sudo modprobe -f cdc-acm"
 fi
 # Install the cdc-acm module
+# Make sure that the drivers/usb/class directory exists
 INSTALLDIRECTORY=/lib/modules/$(uname -r)/kernel/drivers/usb/class
-echo $INSTALLDIRECTORY
 sudo mkdir -p "$INSTALLDIRECTORY" 
+# Then copy over the module file
 sudo cp -v cdc-acm.ko $INSTALLDIRECTORY
 sudo depmod -a
 echo "Installed cdc-acm Module"

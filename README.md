@@ -43,7 +43,7 @@ These scripts are for L4T 28.1. L4T version 28.2 includes cp210x and cdc-acm mod
 <h3>February, 2018</h3>
 Add cp210x and ch341 modules and install scripts
 
-<h3November, 2017<h3
+<h3>November, 2017</h3>
 Initial Release
 
 

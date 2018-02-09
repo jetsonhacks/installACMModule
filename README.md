@@ -40,10 +40,10 @@ Note that on a version mismatch, the user can still install the module. However,
 These scripts are for L4T 28.1. L4T version 28.2 includes cp210x and cdc-acm modules.
 
 <h2>Release Notes</h2>
-<em>February, 2018</em>
+<h3>February, 2018</h3>
 Add cp210x and ch341 modules and install scripts
 
-<em>November, 2017</em>
+<h3November, 2017<h3
 Initial Release
 
 
